@@ -1,3 +1,4 @@
+import { OrderCreatedListener } from './events/listeners/order-created-listener';
 // starts the express server
 // and connecting to the database.
 
@@ -6,7 +7,11 @@
 // Listeners
 
 const start = async () => {
-  console.log('Expiration Service starting up...');
+  try {
+    await new OrderCreatedListener().listen();
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 start();
