@@ -8,7 +8,8 @@ import { OrderCreatedListener } from './events/listeners/order-created-listener'
 
 const start = async () => {
   try {
-    await new OrderCreatedListener().listen();
+    // await new OrderCreatedListener().listen();
+    console.log('Expiration Service started');
   } catch (err) {
     console.error(err);
   }
